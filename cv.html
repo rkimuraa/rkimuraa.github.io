@@ -9,6 +9,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* Embedded PDF viewer */
+  .pdf-viewer{
+    border:1px solid rgba(0,0,0,.12);
+    border-radius:10px;
+    overflow:hidden;
+    background:#f4f4f2;
+    margin:0 0 1rem;
+  }
+  .pdf-viewer iframe{
+    display:block;
+    width:100%;
+    height:min(85vh, 1100px);
+    border:0;
+  }
+  .pdf-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+</style>
 </head>
 <body>
 
@@ -33,13 +50,19 @@
   <header class="hero wrap">
     <p class="eyebrow">Curriculum vitae</p>
     <h1>CV</h1>
-    <p class="lede">Full academic and professional record, kept as a PDF.</p>
+    <p class="lede">Full academic and professional record.</p>
   </header>
 
   <main class="wrap">
     <section>
-      <h2>Download</h2>
-      <p><a class="cta" href="https://drive.google.com/file/d/1e--mwW4IkMsAcCfAhC7T5F5t-X1VzsdW/view?usp=drive_link">Open CV (PDF)</a></p>
+      <h2>CV</h2>
+      <div class="pdf-viewer">
+        <iframe src="cv.pdf#view=FitH" title="Roberto Kimura — CV (PDF)" loading="lazy"></iframe>
+      </div>
+      <p class="pdf-actions">
+        <a class="cta" href="cv.pdf" download="Roberto_Kimura_CV.pdf">Download CV (PDF)</a>
+        <a href="cv.pdf" target="_blank" rel="noopener">Open in a new tab</a>
+      </p>
     </section>
 
     <section>
